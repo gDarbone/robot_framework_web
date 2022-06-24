@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220624 03:02:34.520" rpa="false" schemaversion="3">
+<suite id="s1" name="Testes" source="C:\Users\Gabriel\Downloads\automacao-web-robot-framework-main\testes">
+<suite id="s1-s1" name="Teste" source="C:\Users\Gabriel\Downloads\automacao-web-robot-framework-main\testes\teste.robot">
+<test id="s1-s1-t1" name="Test Case 01: Adicionar Item ao carrinho e fazer checkout" line="20">
+<kw name="Abrir navegador" library="recursos_comuns" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220624 03:02:35.160" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220624 03:02:35.160" endtime="20220624 03:02:37.224"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220624 03:02:37.225" endtime="20220624 03:02:37.351"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:35.160" endtime="20220624 03:02:37.351"/>
+</kw>
+<kw name="DADO que eu esteja no site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_inicio}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220624 03:02:37.352" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220624 03:02:37.352" endtime="20220624 03:02:41.828"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:37.352" endtime="20220624 03:02:41.829"/>
+</kw>
+<kw name="QUANDO clico no vestido faded" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item_faded}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:41.830" level="INFO">Clicking element '//ul[@id='homefeatured']//li//div//div//a[contains(text(),'Faded')]'.</msg>
+<status status="PASS" starttime="20220624 03:02:41.829" endtime="20220624 03:02:43.874"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:41.829" endtime="20220624 03:02:43.874"/>
+</kw>
+<kw name="E adiciono o item ao carrinho" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:43.875" level="INFO">Clicking button '//button[@name='Submit']'.</msg>
+<status status="PASS" starttime="20220624 03:02:43.875" endtime="20220624 03:02:44.896"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:43.874" endtime="20220624 03:02:44.896"/>
+</kw>
+<kw name="E clicar em fazer o checkout" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_proceed_checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220624 03:02:44.897" endtime="20220624 03:02:46.031"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_proceed_checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:46.031" level="INFO">Clicking element '//a//span[contains(text(),'Proceed to checkout')]'.</msg>
+<status status="PASS" starttime="20220624 03:02:46.031" endtime="20220624 03:02:48.136"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:44.896" endtime="20220624 03:02:48.136"/>
+</kw>
+<kw name="Então validar valor total sem frete" library="keywords">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${cmp_total}</arg>
+<arg>$16.51</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220624 03:02:48.137" level="INFO">Verifying element '//span[@id='total_product_price_1_1_0']' contains exact text '$16.51'.</msg>
+<status status="PASS" starttime="20220624 03:02:48.137" endtime="20220624 03:02:48.158"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:48.137" endtime="20220624 03:02:48.158"/>
+</kw>
+<kw name="Fechar navegador" library="recursos_comuns" type="TEARDOWN">
+<kw name="Get Current Date">
+<var>${datacurrent}</var>
+<msg timestamp="20220624 03:02:48.164" level="FAIL">No keyword with name 'Get Current Date' found.</msg>
+<status status="FAIL" starttime="20220624 03:02:48.164" endtime="20220624 03:02:48.164"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${datacurrent}-test-evidence-.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220624 03:02:48.166" level="FAIL">Variable '${datacurrent}' not found.</msg>
+<status status="FAIL" starttime="20220624 03:02:48.165" endtime="20220624 03:02:48.166"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220624 03:02:48.166" endtime="20220624 03:02:48.174"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220624 03:02:48.174" endtime="20220624 03:02:48.214"/>
+</kw>
+<status status="FAIL" starttime="20220624 03:02:48.159" endtime="20220624 03:02:48.214">Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</kw>
+<status status="FAIL" starttime="20220624 03:02:35.156" endtime="20220624 03:02:48.215">Teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Test Case 02: Login c sucesso - email invalido" line="27">
+<kw name="Abrir navegador" library="recursos_comuns" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220624 03:02:48.219" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220624 03:02:48.218" endtime="20220624 03:02:50.212"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220624 03:02:50.212" endtime="20220624 03:02:50.339"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:48.218" endtime="20220624 03:02:50.339"/>
+</kw>
+<kw name="DADO que eu esteja no site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_inicio}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220624 03:02:50.340" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220624 03:02:50.340" endtime="20220624 03:02:54.699"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:50.340" endtime="20220624 03:02:54.700"/>
+</kw>
+<kw name="E clico em sign in" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:54.701" level="INFO">Clicking element '//div//a[@class='login']'.</msg>
+<status status="PASS" starttime="20220624 03:02:54.701" endtime="20220624 03:02:56.972"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:54.700" endtime="20220624 03:02:56.972"/>
+</kw>
+<kw name="Quando preencho email invalido e senha valida" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_email}</arg>
+<arg>adsfasdf</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:56.975" level="INFO">Typing text 'adsfasdf' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20220624 03:02:56.974" endtime="20220624 03:02:57.051"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_pass}</arg>
+<arg>asdfasdf</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:57.052" level="INFO">Typing text 'asdfasdf' into text field '//input[@id='passwd']'.</msg>
+<status status="PASS" starttime="20220624 03:02:57.051" endtime="20220624 03:02:57.129"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:56.973" endtime="20220624 03:02:57.129"/>
+</kw>
+<kw name="E pressiono Submit" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_submit_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:02:57.130" level="INFO">Clicking button '//button[@id='SubmitLogin']'.</msg>
+<status status="PASS" starttime="20220624 03:02:57.130" endtime="20220624 03:03:05.196"/>
+</kw>
+<status status="PASS" starttime="20220624 03:02:57.129" endtime="20220624 03:03:05.197"/>
+</kw>
+<kw name="Então deve ser exibido mensagem de email incorreto" library="keywords">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_incorrect_email}</arg>
+<arg>Invalid email address.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220624 03:03:05.198" level="INFO">Verifying element '//li[contains(text(),'Invalid email')]' contains exact text 'Invalid email address.'.</msg>
+<status status="PASS" starttime="20220624 03:03:05.197" endtime="20220624 03:03:05.219"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:05.197" endtime="20220624 03:03:05.219"/>
+</kw>
+<kw name="Fechar navegador" library="recursos_comuns" type="TEARDOWN">
+<kw name="Get Current Date">
+<var>${datacurrent}</var>
+<msg timestamp="20220624 03:03:05.225" level="FAIL">No keyword with name 'Get Current Date' found.</msg>
+<status status="FAIL" starttime="20220624 03:03:05.225" endtime="20220624 03:03:05.226"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${datacurrent}-test-evidence-.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220624 03:03:05.227" level="FAIL">Variable '${datacurrent}' not found.</msg>
+<status status="FAIL" starttime="20220624 03:03:05.226" endtime="20220624 03:03:05.227"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220624 03:03:05.227" endtime="20220624 03:03:05.236"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220624 03:03:05.236" endtime="20220624 03:03:05.272"/>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:05.220" endtime="20220624 03:03:05.272">Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</kw>
+<status status="FAIL" starttime="20220624 03:02:48.217" endtime="20220624 03:03:05.272">Teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</test>
+<test id="s1-s1-t3" name="Test Case 03: Login c sucesso - validacao generica" line="34">
+<kw name="Abrir navegador" library="recursos_comuns" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220624 03:03:05.276" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220624 03:03:05.276" endtime="20220624 03:03:07.308"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220624 03:03:07.308" endtime="20220624 03:03:07.422"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:05.275" endtime="20220624 03:03:07.422"/>
+</kw>
+<kw name="DADO que eu esteja no site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_inicio}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220624 03:03:07.423" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220624 03:03:07.423" endtime="20220624 03:03:11.510"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:07.422" endtime="20220624 03:03:11.510"/>
+</kw>
+<kw name="E clico em sign in" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:11.512" level="INFO">Clicking element '//div//a[@class='login']'.</msg>
+<status status="PASS" starttime="20220624 03:03:11.511" endtime="20220624 03:03:13.163"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:11.511" endtime="20220624 03:03:13.163"/>
+</kw>
+<kw name="Quando preencho email e senha com validos" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_email}</arg>
+<arg>asdfasdf@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:13.164" level="INFO">Typing text 'asdfasdf@gmail.com' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20220624 03:03:13.164" endtime="20220624 03:03:13.551"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_pass}</arg>
+<arg>asdfasdf</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:13.552" level="INFO">Typing text 'asdfasdf' into text field '//input[@id='passwd']'.</msg>
+<status status="PASS" starttime="20220624 03:03:13.551" endtime="20220624 03:03:13.626"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:13.164" endtime="20220624 03:03:13.626"/>
+</kw>
+<kw name="E pressiono Submit" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_submit_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:13.627" level="INFO">Clicking button '//button[@id='SubmitLogin']'.</msg>
+<status status="PASS" starttime="20220624 03:03:13.627" endtime="20220624 03:03:26.905"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:13.627" endtime="20220624 03:03:26.905"/>
+</kw>
+<kw name="Então deve ser exibido mensagem de autenticacao falha" library="keywords">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_auth_fail}</arg>
+<arg>Authentication failed.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220624 03:03:26.907" level="INFO">Verifying element '//li[contains(text(),'Authentication')]' contains exact text 'Authentication failed.'.</msg>
+<status status="PASS" starttime="20220624 03:03:26.906" endtime="20220624 03:03:26.930"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:26.906" endtime="20220624 03:03:26.931"/>
+</kw>
+<kw name="Fechar navegador" library="recursos_comuns" type="TEARDOWN">
+<kw name="Get Current Date">
+<var>${datacurrent}</var>
+<msg timestamp="20220624 03:03:26.939" level="FAIL">No keyword with name 'Get Current Date' found.</msg>
+<status status="FAIL" starttime="20220624 03:03:26.939" endtime="20220624 03:03:26.939"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${datacurrent}-test-evidence-.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220624 03:03:26.941" level="FAIL">Variable '${datacurrent}' not found.</msg>
+<status status="FAIL" starttime="20220624 03:03:26.939" endtime="20220624 03:03:26.941"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220624 03:03:26.941" endtime="20220624 03:03:26.948"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220624 03:03:26.948" endtime="20220624 03:03:26.992"/>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:26.931" endtime="20220624 03:03:26.993">Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:05.274" endtime="20220624 03:03:26.993">Teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</test>
+<test id="s1-s1-t4" name="Test Case 04: Login c sucesso - email e senha invalidos" line="41">
+<kw name="Abrir navegador" library="recursos_comuns" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220624 03:03:26.998" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220624 03:03:26.998" endtime="20220624 03:03:29.118"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220624 03:03:29.119" endtime="20220624 03:03:29.235"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:26.997" endtime="20220624 03:03:29.235"/>
+</kw>
+<kw name="DADO que eu esteja no site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_inicio}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220624 03:03:29.236" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220624 03:03:29.236" endtime="20220624 03:03:33.492"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:29.235" endtime="20220624 03:03:33.492"/>
+</kw>
+<kw name="E clico em sign in" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:33.493" level="INFO">Clicking element '//div//a[@class='login']'.</msg>
+<status status="PASS" starttime="20220624 03:03:33.493" endtime="20220624 03:03:34.974"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:33.492" endtime="20220624 03:03:34.975"/>
+</kw>
+<kw name="Quando preencho email e senha invalidos" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_email}</arg>
+<arg>asdfas;;;..!df</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:34.976" level="INFO">Typing text 'asdfas;;;..!df' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20220624 03:03:34.976" endtime="20220624 03:03:35.410"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_pass}</arg>
+<arg>asdfasdf;x/z!çza~.,</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:35.411" level="INFO">Typing text 'asdfasdf;x/z!çza~.,' into text field '//input[@id='passwd']'.</msg>
+<status status="PASS" starttime="20220624 03:03:35.410" endtime="20220624 03:03:35.495"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:34.975" endtime="20220624 03:03:35.495"/>
+</kw>
+<kw name="E pressiono Submit" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_submit_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:35.496" level="INFO">Clicking button '//button[@id='SubmitLogin']'.</msg>
+<status status="PASS" starttime="20220624 03:03:35.496" endtime="20220624 03:03:48.725"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:35.496" endtime="20220624 03:03:48.725"/>
+</kw>
+<kw name="Então deve ser exibido mensagem de email incorreto" library="keywords">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_incorrect_email}</arg>
+<arg>Invalid email address.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220624 03:03:48.727" level="INFO">Verifying element '//li[contains(text(),'Invalid email')]' contains exact text 'Invalid email address.'.</msg>
+<status status="PASS" starttime="20220624 03:03:48.726" endtime="20220624 03:03:48.748"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:48.726" endtime="20220624 03:03:48.748"/>
+</kw>
+<kw name="Fechar navegador" library="recursos_comuns" type="TEARDOWN">
+<kw name="Get Current Date">
+<var>${datacurrent}</var>
+<msg timestamp="20220624 03:03:48.755" level="FAIL">No keyword with name 'Get Current Date' found.</msg>
+<status status="FAIL" starttime="20220624 03:03:48.755" endtime="20220624 03:03:48.755"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${datacurrent}-test-evidence-.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220624 03:03:48.756" level="FAIL">Variable '${datacurrent}' not found.</msg>
+<status status="FAIL" starttime="20220624 03:03:48.755" endtime="20220624 03:03:48.756"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220624 03:03:48.756" endtime="20220624 03:03:48.765"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220624 03:03:48.765" endtime="20220624 03:03:48.801"/>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:48.749" endtime="20220624 03:03:48.802">Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:26.996" endtime="20220624 03:03:48.802">Teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</test>
+<test id="s1-s1-t5" name="Test Case 05: cadastro com sucesso" line="48">
+<kw name="Abrir navegador" library="recursos_comuns" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220624 03:03:48.806" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220624 03:03:48.805" endtime="20220624 03:03:50.844"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220624 03:03:50.844" endtime="20220624 03:03:50.957"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:48.805" endtime="20220624 03:03:50.958"/>
+</kw>
+<kw name="DADO que eu esteja no site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_inicio}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220624 03:03:50.959" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220624 03:03:50.959" endtime="20220624 03:03:56.200"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:50.958" endtime="20220624 03:03:56.200"/>
+</kw>
+<kw name="E clico em sign in" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:56.202" level="INFO">Clicking element '//div//a[@class='login']'.</msg>
+<status status="PASS" starttime="20220624 03:03:56.201" endtime="20220624 03:03:57.925"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:56.201" endtime="20220624 03:03:57.925"/>
+</kw>
+<kw name="Quando preencho email no campo de cadastro" library="keywords">
+<kw name="Evaluate" library="BuiltIn">
+<var>${numbers}</var>
+<arg>random.randint(0, sys.maxsize)</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220624 03:03:57.926" level="INFO">${numbers} = 3084145188664056409</msg>
+<status status="PASS" starttime="20220624 03:03:57.925" endtime="20220624 03:03:57.926"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_email_reg}</arg>
+<arg>${numbers}@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:57.926" level="INFO">Typing text '3084145188664056409@gmail.com' into text field '//input[@id='email_create']'.</msg>
+<status status="PASS" starttime="20220624 03:03:57.926" endtime="20220624 03:03:58.142"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:57.925" endtime="20220624 03:03:58.142"/>
+</kw>
+<kw name="E clico em criar uma conta" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_submit_create}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:58.144" level="INFO">Clicking button '//button[@id='SubmitCreate']'.</msg>
+<status status="PASS" starttime="20220624 03:03:58.143" endtime="20220624 03:03:58.207"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:58.143" endtime="20220624 03:03:58.207"/>
+</kw>
+<kw name="E seleciono o genero" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${radio_gender}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220624 03:03:58.208" endtime="20220624 03:03:59.755"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_gender}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:59.755" level="INFO">Clicking element '//input[@id='id_gender1']'.</msg>
+<status status="PASS" starttime="20220624 03:03:59.755" endtime="20220624 03:03:59.796"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:58.208" endtime="20220624 03:03:59.796"/>
+</kw>
+<kw name="E preencho nome e sobrenome" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_first_name}</arg>
+<arg>Gabriel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:59.797" level="INFO">Typing text 'Gabriel' into text field '//input[@id='customer_firstname']'.</msg>
+<status status="PASS" starttime="20220624 03:03:59.797" endtime="20220624 03:03:59.890"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_last_name}</arg>
+<arg>Darbone</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:59.890" level="INFO">Typing text 'Darbone' into text field '//input[@id='customer_lastname']'.</msg>
+<status status="PASS" starttime="20220624 03:03:59.890" endtime="20220624 03:03:59.965"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:59.797" endtime="20220624 03:03:59.965"/>
+</kw>
+<kw name="E preencho a senha" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_psd_reg}</arg>
+<arg>teste123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:03:59.966" level="INFO">Typing text 'teste123' into text field '//input[@id='passwd']'.</msg>
+<status status="PASS" starttime="20220624 03:03:59.966" endtime="20220624 03:04:00.043"/>
+</kw>
+<status status="PASS" starttime="20220624 03:03:59.966" endtime="20220624 03:04:00.043"/>
+</kw>
+<kw name="E seleciono a data do nascimento" library="keywords">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${sel_day_reg}</arg>
+<arg>13</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220624 03:04:00.044" level="INFO">Selecting options from selection list '//select[@id='days']' by value 13.</msg>
+<status status="PASS" starttime="20220624 03:04:00.044" endtime="20220624 03:04:00.110"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${sel_month_reg}</arg>
+<arg>8</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220624 03:04:00.110" level="INFO">Selecting options from selection list '//select[@id='months']' by value 8.</msg>
+<status status="PASS" starttime="20220624 03:04:00.110" endtime="20220624 03:04:00.219"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${sel_year_reg}</arg>
+<arg>1996</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220624 03:04:00.220" level="INFO">Selecting options from selection list '//select[@id='years']' by value 1996.</msg>
+<status status="PASS" starttime="20220624 03:04:00.219" endtime="20220624 03:04:00.280"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.044" endtime="20220624 03:04:00.280"/>
+</kw>
+<kw name="E preencho o nome e sobrenome adress" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_address_first_name}</arg>
+<arg>Gabriel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.281" level="INFO">Typing text 'Gabriel' into text field '//input[@id='firstname']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.281" endtime="20220624 03:04:00.377"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_address_last_name}</arg>
+<arg>Darbone</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.378" level="INFO">Typing text 'Darbone' into text field '//input[@id='lastname']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.377" endtime="20220624 03:04:00.471"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.280" endtime="20220624 03:04:00.472"/>
+</kw>
+<kw name="E preencho o nome da empresa" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_company}</arg>
+<arg>teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.473" level="INFO">Typing text 'teste' into text field '//input[@id='company']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.472" endtime="20220624 03:04:00.564"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.472" endtime="20220624 03:04:00.564"/>
+</kw>
+<kw name="E preencho o endereco" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_address}</arg>
+<arg>teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.565" level="INFO">Typing text 'teste' into text field '//input[@id='address1']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.565" endtime="20220624 03:04:00.638"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.564" endtime="20220624 03:04:00.639"/>
+</kw>
+<kw name="E preencho a cidade" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_city}</arg>
+<arg>teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.640" level="INFO">Typing text 'teste' into text field '//input[@id='city']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.639" endtime="20220624 03:04:00.724"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.639" endtime="20220624 03:04:00.724"/>
+</kw>
+<kw name="E seleciono o estado" library="keywords">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${sel_state}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220624 03:04:00.726" level="INFO">Selecting options from selection list '//select[@id='id_state']' by value 2.</msg>
+<status status="PASS" starttime="20220624 03:04:00.725" endtime="20220624 03:04:00.791"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.725" endtime="20220624 03:04:00.791"/>
+</kw>
+<kw name="E preencho o cep" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_zip_code}</arg>
+<arg>12345</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.793" level="INFO">Typing text '12345' into text field '//input[@id='postcode']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.792" endtime="20220624 03:04:00.869"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.792" endtime="20220624 03:04:00.869"/>
+</kw>
+<kw name="E seleciono o pais" library="keywords">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${sel_country}</arg>
+<arg>21</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220624 03:04:00.871" level="INFO">Selecting options from selection list '//select[@id='id_country']' by value 21.</msg>
+<status status="PASS" starttime="20220624 03:04:00.870" endtime="20220624 03:04:00.913"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.870" endtime="20220624 03:04:00.913"/>
+</kw>
+<kw name="E preencho o telefone residencial" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_home_phone}</arg>
+<arg>12912331233</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.914" level="INFO">Typing text '12912331233' into text field '//input[@id='phone']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.914" endtime="20220624 03:04:00.996"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.913" endtime="20220624 03:04:00.996"/>
+</kw>
+<kw name="E preencho o telefone celular" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${cmp_mobile_phone}</arg>
+<arg>12912331233</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:00.998" level="INFO">Typing text '12912331233' into text field '//input[@id='phone_mobile']'.</msg>
+<status status="PASS" starttime="20220624 03:04:00.997" endtime="20220624 03:04:01.082"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:00.997" endtime="20220624 03:04:01.082"/>
+</kw>
+<kw name="E clico no botao de registrar" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_register}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220624 03:04:01.083" level="INFO">Clicking button '//button[@id='submitAccount']'.</msg>
+<status status="PASS" starttime="20220624 03:04:01.082" endtime="20220624 03:04:11.512"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:01.082" endtime="20220624 03:04:11.512"/>
+</kw>
+<kw name="Entao a conta deve ser registrada" library="keywords">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My account - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220624 03:04:11.518" level="INFO">Page title is 'My account - My Store'.</msg>
+<status status="PASS" starttime="20220624 03:04:11.513" endtime="20220624 03:04:11.518"/>
+</kw>
+<status status="PASS" starttime="20220624 03:04:11.513" endtime="20220624 03:04:11.518"/>
+</kw>
+<kw name="Fechar navegador" library="recursos_comuns" type="TEARDOWN">
+<kw name="Get Current Date">
+<var>${datacurrent}</var>
+<msg timestamp="20220624 03:04:11.525" level="FAIL">No keyword with name 'Get Current Date' found.</msg>
+<status status="FAIL" starttime="20220624 03:04:11.525" endtime="20220624 03:04:11.525"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${datacurrent}-test-evidence-.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220624 03:04:11.526" level="FAIL">Variable '${datacurrent}' not found.</msg>
+<status status="FAIL" starttime="20220624 03:04:11.525" endtime="20220624 03:04:11.526"/>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220624 03:04:11.526" endtime="20220624 03:04:11.532"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220624 03:04:11.533" endtime="20220624 03:04:11.574"/>
+</kw>
+<status status="FAIL" starttime="20220624 03:04:11.518" endtime="20220624 03:04:11.574">Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</kw>
+<status status="FAIL" starttime="20220624 03:03:48.804" endtime="20220624 03:04:11.575">Teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'Get Current Date' found.
+
+2) Variable '${datacurrent}' not found.</status>
+</test>
+<status status="FAIL" starttime="20220624 03:02:34.549" endtime="20220624 03:04:11.578"/>
+</suite>
+<status status="FAIL" starttime="20220624 03:02:34.522" endtime="20220624 03:04:11.580"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="5" skip="0" id="s1" name="Testes">Testes</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s1" name="Teste">Testes.Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
