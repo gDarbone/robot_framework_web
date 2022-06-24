@@ -17,8 +17,6 @@ Abrir navegador
     Maximize Browser Window
 
 Fechar navegador
-    ${datacurrent}             Get Current Date
-    Capture Page Screenshot    ${datacurrent}-test-evidence-.png
     Delete All Cookies
     Close window
 
